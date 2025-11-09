@@ -18,3 +18,7 @@ classifiers = [
 dependencies = ["typing", "json", "os"]
 license = "MIT"
     license-files = ["LICENSE.md"]
+
+[project.urls]
+Homepage = "https://github.com/Mochigoz/local_data_store"
+Issues = "https://github.com/Mochigoz/local_data_store/issues"
