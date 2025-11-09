@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LocalDataStore"
+version = "alpha-0.0.1"
+authors = [
+  { name="Mochigoz", email="mochigoz@hotmail.com" },
+]
+description = "A small package to store data in local"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = ["typing", "json", "os"]
+license = "MIT"
+    license-files = ["LICENSE.md"]
