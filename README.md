@@ -6,7 +6,7 @@ Basically it can store, simple values such as `str`, `int`, `list` and `dict`
 ## Installation
 The librairy is only available on GitHub.
 ```
-pip git+https://github.com/Mochigoz/local_data_store.git
+pip install git+https://github.com/Mochigoz/local_data_store.git
 ```
 
 ## Usage
