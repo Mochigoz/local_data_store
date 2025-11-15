@@ -2,10 +2,17 @@ import os
 import json
 from typing import Union, List, Any
 
+def convert_path(path: str) -> str: # Add .json to the file
+    if not path.endswith(r'.json'):
+        path += r'.json'
+
+    return path
+
 def read(path: str) -> Union[Any, None]:
     if not os.path.exists(path): # Check if path exists
         return None
 
+    path = convert_path(path)
     with open(path, 'r') as f: # Try to open the file
         return json.load(f) # Read the file
 
@@ -20,6 +27,7 @@ def write(path: str, content: Any):
     if folder_path:
         os.makedirs(folder_path, exist_ok=True)
 
+    path = convert_path(path)
     with open(path, 'w') as f:
         json.dump(
             obj=content,
@@ -41,6 +49,7 @@ def append(path: str, content: Any) -> Union[List[Any], Any]:
         file_content: list = [file_content]
         file_content.append(content) # Append the value
 
+    path = convert_path(path)
     write(path, file_content) # Write in the file the content
     return file_content # Return the new content
 
