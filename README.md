@@ -4,10 +4,9 @@ Local Data Store is a Python librairy to save and manage `.json` files locally.\
 Basically it can store, simple values such as `str`, `int`, `list` and `dict`
 
 ## Installation
-As it's currently an unfinished version.\
 The librairy is only available on GitHub.
 ```
-git clone https://github.com/Mochigoz/local_data_store.git
+pip install git+https://github.com/Mochigoz/local_data_store.git
 ```
 
 ## Usage
