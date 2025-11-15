@@ -9,10 +9,10 @@ def convert_path(path: str) -> str: # Add .json to the file
     return path
 
 def read(path: str) -> Union[Any, None]:
+    path = convert_path(path)
     if not os.path.exists(path): # Check if path exists
         return None
 
-    path = convert_path(path)
     with open(path, 'r') as f: # Try to open the file
         return json.load(f) # Read the file
 
