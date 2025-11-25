@@ -47,7 +47,7 @@ def append(path: str, content: Any) -> Union[List[Any], Any]:
 
     if isinstance(content, dict) and isinstance(file_content, dict):
         for key, value in content.items():
-            file_content.setdefault(key, value)
+            file_content[key] = value
     elif not isinstance(file_content, list):
         file_content: list = [file_content]
         file_content.append(content) # Append the value
