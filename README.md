@@ -10,7 +10,7 @@ pip install git+https://github.com/Mochigoz/local_data_store.git
 ```
 Some modifications will be made so if you want to have the latest version of the library, don't forget to update it!
 ```
-pip install --update git+https://github.com/Mochigoz/local_data_store.git
+pip install --upgrade git+https://github.com/Mochigoz/local_data_store.git
 ```
 
 ## Usage
