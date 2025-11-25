@@ -13,8 +13,11 @@ def read(path: str) -> Union[Any, None]:
     if not os.path.exists(path): # Check if path exists
         return None
 
-    with open(path, 'r') as f: # Try to open the file
-        return json.load(f) # Read the file
+    try:
+        with open(path, 'r') as f: # Try to open the file
+            return json.load(f) # Read the file
+    except json.JSONDecodeError: # If file corrupted or do not exists return None
+        return None
 
 def write(path: str, content: Any):
     """
