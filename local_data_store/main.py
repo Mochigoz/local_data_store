@@ -14,7 +14,7 @@ def read(path: str) -> Union[Any, None]:
         return None
 
     try:
-        with open(path, 'r') as f: # Try to open the file
+        with open(path, 'r', encoding='utf-8') as f: # Try to open the file
             return json.load(f) # Read the file
     except json.JSONDecodeError: # If file corrupted or do not exists return None
         return None
@@ -31,7 +31,7 @@ def write(path: str, content: Any):
         os.makedirs(folder_path, exist_ok=True)
 
     path = convert_path(path)
-    with open(path, 'w') as f:
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(
             obj=content,
             fp=f,
