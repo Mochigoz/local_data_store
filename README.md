@@ -25,9 +25,9 @@ lds.write("MY_VARIABLE_PATH", "Hello")
 lds.write(path, "Bye!")
 
 # Read the file
-print("With variable:")
+print("--- With variable:")
 print(lds.read("MY_VARIABLE_PATH"))
-print("\nWith 'path':")
+print("--- With 'path':")
 print(lds.read(path))
 print(lds.read("Bye!"))
 
@@ -40,10 +40,9 @@ print(lds.read("MY_VARIABLE_PATH"))
 lds.remove("MY_VARIABLE_PATH")
 ```
 ```raw
->>> With variable:
+>>> --- With variable:
 >>> "Hello"
->>>
-    With 'path':
+>>> --- With 'path':
 >>> Bye!
 >>> None
 >>> --- After appending value:
