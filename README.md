@@ -1,4 +1,4 @@
-# 📦 Local Data Store (alpha-0.0.4 Edition)
+# 📦 Local Data Store (alpha-0.0.5 Edition)
 This package is distributed by [Mochigoz](https://github.com/Mochigoz)\
 Local Data Store is a Python librairy to save and manage `.json` files locally.\
 Basically it can store, simple values such as `str`, `int`, `list` and `dict`
@@ -17,24 +17,37 @@ pip install --upgrade git+https://github.com/Mochigoz/local_data_store.git
 ```python
 import local_data_store as lds
 
-path = r"PATH\TO\A\FILE"
+lds.edit_custom_path(r"MY_VARIABLE_PATH", r"ABSOLUTE\PATH\TO\A\FILE") # Set a variable saved in Local\local_data_store\paths.json
+path = r"ABSOLUTE\PATH\TO\ANOTHER\FILE" # Function also works with a given string
 
 # Create a new .json file or rewrite it and save "Hello" in it
-lds.write(path, "Hello")
+lds.write("MY_VARIABLE_PATH", "Hello")
+lds.write(path, "Bye!")
 
 # Read the file
+print("With variable:")
+print(lds.read("MY_VARIABLE_PATH"))
+print("\nWith 'path':")
 print(lds.read(path))
+print(lds.read("Bye!"))
 
 # Append a data in the file
-lds.append(path, "Bye")
-print(lds.read(path))
+lds.append("MY_VARIABLE_PATH", "Hey")
+print("--- After appending value:")
+print(lds.read("MY_VARIABLE_PATH"))
 
 # Delete the file
-lds.remove(path)
+lds.remove("MY_VARIABLE_PATH")
 ```
 ```raw
+>>> With variable:
 >>> "Hello"
->>> ["Hello", "Bye"]
+>>>
+    With 'path':
+>>> Bye!
+>>> None
+>>> --- After appending value:
+>>> ["Hello", "Hey"]
 ```
 
 ## Contributing
